@@ -7,74 +7,140 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Cabeçalho e Navegação -->
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="#sobre-mim">Sobre Mim</a></li>
-                <li><a href="#formacao">Formação</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <script>
+        // JavaScript no codigo
+        document.addEventListener("DOMContentLoaded", function() {
+            // Cabecalho de navegação
+            const header = document.createElement("header");
+            const nav = document.createElement("nav");
+            const menu = document.createElement("ul");
+            menu.classList.add("menu");
 
-    <!-- Seção Sobre Mim -->
-    <section id="sobre-mim">
-        <section id="sobre-mim">
-            <h1>Sobre Mim</h1>
-            <p> uma entusiasta de 3
-                Olá! Sou a Nayara,4 anos que encontra equilíbrio entre a correria do dia a dia e minhas paixões. 
-                Quando não estou explorando novos mundos em meus jogos favoritos, você pode me encontrar desafiando meus limites em uma corrida ou pedalando por aí. 
-                Acredito que a vida é uma aventura constante, e a tecnologia e o esporte são minhas companhias nessa jornada. 
-                Desde criança, sempre fui movida pela curiosidade e pela busca por novas experiências. 
-                Correr e andar de bicicleta me proporcionam momentos de paz e reflexão, enquanto os jogos são uma forma de explorar mundos novos e conectar-me com outras pessoas.
-            </p>
-        </section>
-        
+            const menuItems = [
+                { href: "#sobre-mim", text: "Sobre Mim" },
+                { href: "#formacao", text: "Formação" },
+                { href: "#portfolio", text: "Portfólio" },
+                { href: "#contato", text: "Contato" }
+            ];
 
-    <!-- Seção Formação -->
-    <section id="formacao">
-        <h1>Formação</h1>
-        <p>
-            Sou formada em Análise de Sistemas, o que me proporcionou uma sólida base em desenvolvimento de software e lógica de programação. 
-            Atualmente, estou aprimorando minhas habilidades em Ciência de Dados e Python, com foco em automação e análise de dados. 
-            Além do português, possuo conhecimentos básicos de inglês.
-        </p>
-    </section>
-    
+            menuItems.forEach(item => {
+                const li = document.createElement("li");
+                const a = document.createElement("a");
+                a.href = item.href;
+                a.textContent = item.text;
+                li.appendChild(a);
+                menu.appendChild(li);
+            });
 
-    <!-- Seção Portfólio -->
-    <section id="portfolio">
-        <h1>Portfólio</h1>
-        <p>Aqui estão alguns dos projetos que desenvolvi durante o curso:</p>
-        <ul>
-            <li><a href="https://github.com/NayaraR/Aula-boostrap/tree/main/env_bootstrap" target="_blank">Projeto 1</a></li>
-            <li><a href="https://github.com/NayaraR/Portfolio" target="_blank">Projeto 2</a></li>
-        </ul>
-    </section>
-    
+            nav.appendChild(menu);
+            header.appendChild(nav);
+            document.body.appendChild(header);
 
-    <!-- Seção Contato -->
-    <section id="contato">
-        <h1>Contato</h1>
-        <form action="https://formspree.io/f/{your-form-id}" method="POST">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+            // Sobre mim 
+            const sectionSobreMim = document.createElement("section");
+            sectionSobreMim.id = "sobre-mim";
+            const h1SobreMim = document.createElement("h1");
+            h1SobreMim.textContent = "Sobre Mim";
+            const pSobreMim = document.createElement("p");
+            pSobreMim.textContent = "Olá! Sou a Nayara, tenho 34 anos e encontro equilíbrio entre a correria do dia a dia e minhas paixões. Quando não jogando meus jogos de video game, você pode me encontrar eu estou em uma corrida ou pedalando por aí, realizando trilhas, acredito que a vida é uma aventura constante, e a tecnologia e o esporte são minhas companhias nessa jornada, sempre fui movida pela curiosidade e pela busca por novas experiências. Correr e andar de bicicleta me proporcionam momentos de paz e reflexão, enquanto os jogos de video game são para relaxar em dias que são caoticos.";
+            sectionSobreMim.appendChild(h1SobreMim);
+            sectionSobreMim.appendChild(pSobreMim);
+            document.body.appendChild(sectionSobreMim);
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+            // Minha formaçao
+            const sectionFormacao = document.createElement("section");
+            sectionFormacao.id = "formacao";
+            const h1Formacao = document.createElement("h1");
+            h1Formacao.textContent = "Formação";
+            const pFormacao = document.createElement("p");
+            pFormacao.textContent = "Sou formada em Análise de Sistemas, o que me proporcionou uma sólida base em desenvolvimento de software e lógica de programação. Atualmente, estou aprimorando minhas habilidades em Ciência de Dados e Python, com foco em automação e análise de dados. Além do português, possuo conhecimentos básicos de inglês.";
+            sectionFormacao.appendChild(h1Formacao);
+            sectionFormacao.appendChild(pFormacao);
+            document.body.appendChild(sectionFormacao);
 
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+            // Meu portifolio deixei um do git mais não tenho muita coisa
+            const sectionPortfolio = document.createElement("section");
+            sectionPortfolio.id = "portfolio";
+            const h1Portfolio = document.createElement("h1");
+            h1Portfolio.textContent = "Portfólio";
+            const pPortfolio = document.createElement("p");
+            pPortfolio.textContent = "Aqui estão alguns dos projetos que desenvolvi durante o curso:";
+            const ulPortfolio = document.createElement("ul");
 
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+            const projetos = [
+                { href: "https://github.com/NayaraR/Aula-boostrap/tree/main/env_bootstrap", text: "Projeto 1" },
+                { href: "https://github.com/NayaraR/Portfolio", text: "Projeto 2" }
+            ];
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2024 Nayara Rodrigues - Todos os direitos reservados.</p>
-    </footer>
+            projetos.forEach(projeto => {
+                const li = document.createElement("li");
+                const a = document.createElement("a");
+                a.href = projeto.href;
+                a.target = "_blank";
+                a.textContent = projeto.text;
+                li.appendChild(a);
+                ulPortfolio.appendChild(li);
+            });
+
+            sectionPortfolio.appendChild(h1Portfolio);
+            sectionPortfolio.appendChild(pPortfolio);
+            sectionPortfolio.appendChild(ulPortfolio);
+            document.body.appendChild(sectionPortfolio);
+
+            // o contato
+            const sectionContato = document.createElement("section");
+            sectionContato.id = "contato";
+            const h1Contato = document.createElement("h1");
+            h1Contato.textContent = "Contato";
+            const formContato = document.createElement("form");
+            formContato.action = "https://formspree.io/f/{your-form-id}";
+            formContato.method = "POST";
+
+            const camposContato = [
+                { label: "Nome:", type: "text", id: "nome", name: "nome", required: true },
+                { label: "E-mail:", type: "email", id: "email", name: "email", required: true },
+                { label: "Mensagem:", type: "textarea", id: "mensagem", name: "mensagem", rows: 5, required: true }
+            ];
+
+            camposContato.forEach(campo => {
+                const label = document.createElement("label");
+                label.for = campo.id;
+                label.textContent = campo.label;
+                formContato.appendChild(label);
+
+                if (campo.type === "textarea") {
+                    const textarea = document.createElement("textarea");
+                    textarea.id = campo.id;
+                    textarea.name = campo.name;
+                    textarea.rows = campo.rows;
+                    textarea.required = campo.required;
+                    formContato.appendChild(textarea);
+                } else {
+                    const input = document.createElement("input");
+                    input.type = campo.type;
+                    input.id = campo.id;
+                    input.name = campo.name;
+                    input.required = campo.required;
+                    formContato.appendChild(input);
+                }
+            });
+
+            const buttonEnviar = document.createElement("button");
+            buttonEnviar.type = "submit";
+            buttonEnviar.textContent = "Enviar";
+            formContato.appendChild(buttonEnviar);
+
+            sectionContato.appendChild(h1Contato);
+            sectionContato.appendChild(formContato);
+            document.body.appendChild(sectionContato);
+
+            // Rodape
+            const footer = document.createElement("footer");
+            const pFooter = document.createElement("p");
+            pFooter.textContent = "© 2024 Nayara Rodrigues - Todos os direitos reservados.";
+            footer.appendChild(pFooter);
+            document.body.appendChild(footer);
+        });
+    </script>
 </body>
 </html>
